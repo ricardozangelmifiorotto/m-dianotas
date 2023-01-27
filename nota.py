@@ -47,14 +47,18 @@ for semestre, materia, media in medias:
 print("\nMédia geral entre os semestres: ", media_geral)
 
 #calcula a média por matéria digitada
-materia_escolhida = input("Digite o nome da matéria para calcular a média: ")
-soma_materia = 0
-num_materia = 0
-for semestre, materia, media in medias:
-    if materia == materia_escolhida:
-        soma_materia += media
-        num_materia += 1
+while True:
+    materia_escolhida = input("Digite o nome da matéria para calcular a média ou 'q' para sair: ")
+    if materia_escolhida == 'q':
+        break
+    else:
+        soma_materia = 0
+        num_materia = 0
+        for semestre, materia, media in medias:
+            if materia == materia_escolhida:
+                soma_materia += media
+                num_materia += 1
 
-media_materia = soma_materia/num_materia
+        media_materia = soma_materia/num_materia
 
-print("\nMédia em", materia_escolhida, "entre os semestres: ", media_materia)
+        print("\nMédia em", materia_escolhida, "entre os semestres: ", media_materia)
